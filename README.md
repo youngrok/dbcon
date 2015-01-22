@@ -11,26 +11,32 @@ dbcon is an alternative to
 
 Show databases and users
 
-	dbcon.py status --dbms=postgres
+	dbcon status postgres
 	
-apply configuration
+configure
 
-	dbcon.py apply --dbms=postgres --database=myapp --user=myuser --password=mypassword
-	
-	dbconfigure apply --file myproject/settings.py
+	dbcon configure mydbconfig.yml
+	dbcon configure myproject/settings.py --format django
+
+### Sample configuration file
+sample.yml
+
+	dbms: postgres
+	database: myapp
+	user: myuser
+	password: mypassword
 
 ### Python API
 
-	import dbconfigure
+	import dbcon
 	
 	
-	dbconfigure.status(dbms='postgres')
+	dbcon.status(dbms='postgres')
 	
-	dbconfigure.apply(dbms='postgres',
-	                  host='localhost',
-	                  database='myapp',
-	                  user='myuser',
-	                  password='mypassword')
+	dbcon.configure(dbms='postgres',
+	                database='myapp',
+	                user='myuser',
+	                password='mypassword')
 	
 ### Supported configuration file format
 
@@ -46,3 +52,12 @@ apply configuration
  * OS X
  * Linux (not yet)
  
+ 
+### TODO
+ * support python 2.x
+ * support linux
+ * support mysql
+ * support rails
+ * fake option
+ * confirm when drop
+ * interactive interface
