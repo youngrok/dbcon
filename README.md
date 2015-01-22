@@ -1,4 +1,6 @@
 # dbcon - database configuration tool
+dbcon create database and user as given configuration file so that database application can connect.
+
 dbcon is an alternative to 
 [dbconfig-common](https://people.debian.org/~seanius/policy/dbconfig-common.html/). dbconfig-common is good, but I wasn't able to know how to use it on OS X or other platform, so I reivented it.
 
